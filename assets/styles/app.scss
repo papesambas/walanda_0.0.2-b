@@ -1,0 +1,11 @@
+/* assets/styles/app.scss */
+/* Override some Bootstrap variables */
+$red: #FB4040;
+$primary: rgb(29, 44, 54);
+
+
+@import '../../vendor/twbs/bootstrap/scss/bootstrap';
+
+body {
+  //background: $red;
+}
