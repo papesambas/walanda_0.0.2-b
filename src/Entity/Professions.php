@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Entity\Trait\SlugTrait;
-use Doctrine\ORM\Mapping as ORM;
-use App\Repository\NomsRepository;
 use App\Entity\Trait\CreatedAtTrait;
 use App\Entity\Trait\EntityTrackingTrait;
+use App\Entity\Trait\SlugTrait;
+use App\Repository\ProfessionsRepository;
+use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: NomsRepository::class)]
-class Noms
+#[ORM\Entity(repositoryClass: ProfessionsRepository::class)]
+class Professions
 {
     use CreatedAtTrait;
     use SlugTrait;
@@ -19,7 +19,7 @@ class Noms
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 75)]
+    #[ORM\Column(length: 130)]
     private ?string $designation = null;
 
     public function getId(): ?int
@@ -34,7 +34,7 @@ class Noms
 
     public function setDesignation(string $designation): static
     {
-        $this->designation = mb_strtoupper($designation, 'UTF-8');
+        $this->designation = ucwords(strtolower($designation));
 
         return $this;
     }
