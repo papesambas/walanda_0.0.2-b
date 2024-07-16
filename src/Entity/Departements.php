@@ -22,6 +22,10 @@ class Departements
     #[ORM\Column(length: 100)]
     private ?string $designation = null;
 
+    public function __toString()
+    {
+        return $this->designation;
+    }
     public function getId(): ?int
     {
         return $this->id;

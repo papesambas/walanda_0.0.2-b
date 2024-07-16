@@ -22,6 +22,11 @@ class Prenoms
     #[ORM\Column(length: 75)]
     private ?string $designation = null;
 
+    public function __toString()
+    {
+        return $this->designation;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

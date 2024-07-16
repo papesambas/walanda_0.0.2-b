@@ -19,6 +19,11 @@ class Statuts
     #[ORM\Column]
     private ?int $id = null;
 
+    public function __toString()
+    {
+        return $this->designation;
+    }
+
     #[ORM\Column(length: 75)]
     private ?string $designation = null;
 

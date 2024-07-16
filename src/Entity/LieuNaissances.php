@@ -22,6 +22,15 @@ class LieuNaissances
     #[ORM\Column(length: 130)]
     private ?string $designation = null;
 
+    #[ORM\ManyToOne(inversedBy: 'lieuNaissances')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Communes $commune = null;
+
+    public function __toString()
+    {
+        return $this->designation;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +44,18 @@ class LieuNaissances
     public function setDesignation(string $designation): static
     {
         $this->designation = ucwords(strtolower($designation));
+
+        return $this;
+    }
+
+    public function getCommune(): ?Communes
+    {
+        return $this->commune;
+    }
+
+    public function setCommune(?Communes $commune): static
+    {
+        $this->commune = $commune;
 
         return $this;
     }

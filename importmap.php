@@ -28,4 +28,7 @@ return [
     'jquery' => [
         'version' => '3.7.1',
     ],
+    'canvas-confetti' => [
+        'version' => '1.9.3',
+    ],
 ];

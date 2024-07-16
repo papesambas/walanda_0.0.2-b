@@ -22,6 +22,11 @@ class Professions
     #[ORM\Column(length: 130)]
     private ?string $designation = null;
 
+    public function __toString()
+    {
+        return $this->designation;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
