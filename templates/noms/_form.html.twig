@@ -1,0 +1,4 @@
+{{ form_start(form) }}
+{{ form_row(form.designation, { 'attr': {'class': 'select-nomfamille', 'autocomplete': 'off'} }) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

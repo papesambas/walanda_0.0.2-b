@@ -52,7 +52,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $adresse = null;
 
     #[ORM\Column]
-    private ?bool $isActif = null;
+    private ?bool $isActif = true;
 
     #[ORM\Column]
     private bool $isVerified = false;
